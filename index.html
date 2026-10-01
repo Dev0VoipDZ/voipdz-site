@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VOIPDZ — SMS &amp; Voice Termination, Algeria</title>
+<meta name="description" content="VOIPDZ, Algiers: wholesale SMS termination (A2P / OTP) to Algeria and Tunisia over SMPP v3.4 with real DLRs, and wholesale VoIP termination. Free test available.">
+<meta property="og:title" content="VOIPDZ — SMS &amp; Voice Termination, Algeria">
+<meta property="og:description" content="Wholesale SMS (A2P / OTP) to Mobilis, Djezzy and Ooredoo over SMPP, and VoIP termination. Free test available.">
+<meta property="og:url" content="https://voipdz.com/">
+<meta name="theme-color" content="#0A6B4B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A6B4B'/%3E%3Crect x='7' y='18' width='4' height='7' rx='1' fill='%23fff'/%3E%3Crect x='14' y='13' width='4' height='12' rx='1' fill='%23fff'/%3E%3Crect x='21' y='7' width='4' height='18' rx='1' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F6F3;
+    --surface: #FFFFFF;
+    --ink: #10201B;
+    --muted: #55645E;
+    --line: #DCE3DE;
+    --green: #0A6B4B;
+    --green-ink: #FFFFFF;
+    --green-soft: #E2EFE8;
+    --term-bg: #0F1A17;
+    --term-ink: #CFE3DA;
+    --term-dim: #6E8A80;
+    --term-ok: #4ADE9B;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --arabic: "IBM Plex Sans Arabic", "IBM Plex Sans", "Segoe UI", Tahoma, Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B1311;
+      --surface: #121D1A;
+      --ink: #E7EFEB;
+      --muted: #9BB0A8;
+      --line: #23332E;
+      --green: #38B886;
+      --green-ink: #06120E;
+      --green-soft: #133026;
+      --term-bg: #08100D;
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  html[lang="ar"] body { font-family: var(--arabic); line-height: 1.75; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 1080px; margin-inline: auto; padding-inline: 20px; }
+
+  /* Header */
+  .site-head { border-top: 3px solid var(--green); border-bottom: 1px solid var(--line); background: var(--surface); }
+  .head-row { display: flex; align-items: center; gap: 24px; padding-block: 14px; flex-wrap: wrap; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 1.2rem; letter-spacing: .02em; direction: ltr; }
+  .brand svg { width: 26px; height: 26px; flex: none; }
+  .brand .dz { color: var(--green); }
+  .nav { display: flex; gap: 20px; margin-inline-start: auto; flex-wrap: wrap; }
+  .nav a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+  .nav a:hover { color: var(--ink); }
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .lang button {
+    font: 500 .85rem/1 var(--sans); padding: 8px 11px; border: 0; background: transparent; color: var(--muted); cursor: pointer;
+  }
+  .lang button + button { border-inline-start: 1px solid var(--line); }
+  .lang button[aria-pressed="true"] { background: var(--green-soft); color: var(--ink); }
+  .lang button.ar { font-family: var(--arabic); }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding-block: 72px 64px; }
+  .eyebrow { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green); margin: 0 0 14px; }
+  html[lang="ar"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: .95rem; }
+  h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.12; margin: 0 0 18px; font-weight: 700; text-wrap: balance; letter-spacing: -.01em; }
+  html[lang="ar"] h1 { line-height: 1.35; letter-spacing: 0; }
+  .lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 28px; max-width: 58ch; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: .98rem;
+    padding: 12px 18px; border-radius: 10px; border: 1px solid var(--green);
+  }
+  .btn-primary { background: var(--green); color: var(--green-ink); }
+  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-ghost { color: var(--green); background: transparent; }
+  .btn-ghost:hover { background: var(--green-soft); }
+  .btn svg { width: 18px; height: 18px; }
+
+  .term {
+    background: var(--term-bg); color: var(--term-ink); border-radius: 14px; padding: 20px 22px;
+    font: 400 .84rem/1.75 var(--mono); direction: ltr; text-align: left; overflow-x: auto;
+    box-shadow: 0 18px 40px -24px rgba(6, 30, 22, .55);
+  }
+  .term-label { display: flex; align-items: center; gap: 8px; color: var(--term-dim); font: 500 .75rem/1 var(--sans); margin-bottom: 14px; }
+  html[lang="ar"] .term-label { font-family: var(--arabic); direction: rtl; }
+  .term-label .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--term-ok); flex: none; }
+  .term p { margin: 0; white-space: pre; }
+  .term .dim { color: var(--term-dim); }
+  .term .ok { color: var(--term-ok); font-weight: 500; }
+
+  /* Sections */
+  section { padding-block: 56px; border-top: 1px solid var(--line); }
+  h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 28px; line-height: 1.2; text-wrap: balance; }
+
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .card h3 { margin: 0; font-size: 1.25rem; }
+  .card .desc { margin: 0 0 6px; color: var(--muted); }
+  .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .checks li { position: relative; padding-inline-start: 30px; }
+  .checks li::before {
+    content: ""; position: absolute; inset-inline-start: 0; top: .32em; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.3l2.6 2.6L13 6.5' fill='none' stroke='%230A6B4B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat;
+  }
+  @media (prefers-color-scheme: dark) {
+    .checks li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.3l2.6 2.6L13 6.5' fill='none' stroke='%2338B886' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  }
+  .tag { display: inline-block; font: 500 .75rem/1 var(--mono); color: var(--green); background: var(--green-soft); padding: 6px 9px; border-radius: 6px; align-self: flex-start; direction: ltr; }
+
+  .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: start; padding: 14px 20px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  html[lang="ar"] th { text-transform: none; letter-spacing: 0; font-size: .9rem; }
+  td.code { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  td.country { font-weight: 600; }
+  .note { color: var(--muted); font-size: .92rem; margin: 14px 0 0; }
+
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+  .num { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--green); color: var(--green-ink); font: 600 .95rem/1 var(--mono); margin-bottom: 14px; }
+  .steps h3 { margin: 0 0 6px; font-size: 1.08rem; }
+  .steps p { margin: 0; color: var(--muted); }
+
+  .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .contact .lead { margin-bottom: 22px; }
+  .info { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 8px 24px; margin: 0; }
+  .info div { display: grid; grid-template-columns: 150px 1fr; gap: 12px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+  .info div:last-child { border-bottom: 0; }
+  .info dt { color: var(--muted); font-size: .92rem; }
+  .info dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+  .info dd a { text-decoration: none; }
+  .info dd a:hover { text-decoration: underline; }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+
+  .site-foot { border-top: 1px solid var(--line); padding-block: 26px; color: var(--muted); font-size: .9rem; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 32px; padding-block: 48px; }
+    .cards, .steps, .contact { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .nav { display: none; }
+    .head-row { justify-content: space-between; }
+    .info div { grid-template-columns: 1fr; gap: 2px; }
+    .term { font-size: .68rem; padding: 16px; }
+    th, td { padding: 12px 12px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="VOIPDZ home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="var(--green)"/><rect x="5.5" y="14.5" width="3.5" height="6" rx="1" fill="var(--green-ink)"/><rect x="11.25" y="10.5" width="3.5" height="10" rx="1" fill="var(--green-ink)"/><rect x="17" y="5.5" width="3.5" height="15" rx="1" fill="var(--green-ink)"/></svg>
+      <span>VOIP<span class="dz">DZ</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#coverage" data-i18n="nav_coverage">Coverage</a>
+      <a href="#start" data-i18n="nav_start">How to start</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="ar" class="ar" aria-pressed="false">عربي</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow" data-i18n="hero_eyebrow">Wholesale telecom · Algiers, Algeria</p>
+      <h1 data-i18n="hero_title">SMS and voice termination to Algeria</h1>
+      <p class="lead" data-i18n="hero_lead">VOIPDZ connects aggregators, carriers and OTP providers to Mobilis, Djezzy and Ooredoo over SMPP, with real delivery reports and a free test before any live traffic. SMS to Tunisia is also available.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:sms@voipdz.com?subject=Free%20test%20request" data-i18n="hero_cta_test">Request a free test</a>
+        <a class="btn btn-ghost" href="https://wa.me/213673939746" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          <span data-i18n="hero_cta_wa">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <div class="term" role="img" aria-label="Example SMPP session: bind, submit_sm to an Algerian number, delivery report DELIVRD">
+      <div class="term-label"><span class="dot"></span><span data-i18n="term_label">SMPP session · example</span></div>
+      <p><span class="dim">$</span> bind_transceiver  system_id=CLIENT</p>
+      <p><span class="dim">  → bind_transceiver_resp  status=</span><span class="ok">ESME_ROK</span></p>
+      <p><span class="dim">$</span> submit_sm  src=OTPBRAND  dst=2136XXXXXXXX</p>
+      <p><span class="dim">  → submit_sm_resp  message_id=9f2a71c4</span></p>
+      <p><span class="dim">$</span> deliver_sm  id:9f2a71c4  <span class="ok">stat:DELIVRD</span>  err:000</p>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 data-i18n="svc_title">What we offer</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">SMPP v3.4</span>
+          <h3 data-i18n="sms_title">SMS termination (A2P / OTP)</h3>
+          <p class="desc" data-i18n="sms_desc">One-time passwords and transactional messages to Algeria and Tunisia.</p>
+          <ul class="checks">
+            <li data-i18n="sms_f1">SMPP v3.4 connection</li>
+            <li data-i18n="sms_f2">Real DLRs, never fake delivery reports</li>
+            <li data-i18n="sms_f3">Up to 100 SMS per second</li>
+            <li data-i18n="sms_f4">Free test on your own numbers</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="tag">SIP</span>
+          <h3 data-i18n="voice_title">Voice termination (VoIP)</h3>
+          <p class="desc" data-i18n="voice_desc">Wholesale voice routes for carriers and VoIP providers.</p>
+          <ul class="checks">
+            <li data-i18n="voice_f1">SIP interconnection</li>
+            <li data-i18n="voice_f2">Carrier-grade softswitch (VOS3000)</li>
+            <li data-i18n="voice_f3">Destinations and rates on request</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="coverage">
+    <div class="wrap">
+      <h2 data-i18n="cov_title">SMS coverage</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="cov_country">Country</th>
+              <th scope="col" data-i18n="cov_operator">Operator</th>
+              <th scope="col">MCC-MNC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="country" rowspan="3" data-i18n="cov_dz">Algeria (+213)</td><td>Mobilis</td><td class="code">603-01</td></tr>
+            <tr><td>Djezzy</td><td class="code">603-02</td></tr>
+            <tr><td>Ooredoo</td><td class="code">603-03</td></tr>
+            <tr><td class="country" data-i18n="cov_tn">Tunisia (+216)</td><td data-i18n="cov_tn_ops">Operators on request</td><td class="code">605</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" data-i18n="cov_note">Voice destinations and all rates are shared on request.</p>
+    </div>
+  </section>
+
+  <section id="start">
+    <div class="wrap">
+      <h2 data-i18n="steps_title">How to start</h2>
+      <ol class="steps">
+        <li><span class="num">1</span><h3 data-i18n="s1_t">Send your traffic profile</h3><p data-i18n="s1_d">Destinations, expected volume, sender IDs and message type (OTP or transactional).</p></li>
+        <li><span class="num">2</span><h3 data-i18n="s2_t">Get a test account</h3><p data-i18n="s2_d">We open an SMPP test account, usually the same day.</p></li>
+        <li><span class="num">3</span><h3 data-i18n="s3_t">Test, then go live</h3><p data-i18n="s3_d">Check delivery and DLRs on your own numbers, then switch to live traffic.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2 data-i18n="contact_title">Contact</h2>
+        <p class="lead" data-i18n="contact_lead">Tell us your destinations and volume, and we’ll send you rates and a test account.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:sms@voipdz.com?subject=Rates%20and%20test%20account" data-i18n="c_btn_email">Email us</a>
+          <a class="btn btn-ghost" href="https://wa.me/213673939746" target="_blank" rel="noopener" data-i18n="c_btn_wa">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <dl class="info">
+        <div><dt data-i18n="c_email">Email</dt><dd><a class="ltr" href="mailto:sms@voipdz.com">sms@voipdz.com</a></dd></div>
+        <div><dt data-i18n="c_phone">Phone &amp; WhatsApp</dt><dd><a class="ltr" href="tel:+213673939746">+213 673 93 97 46</a></dd></div>
+        <div><dt data-i18n="c_office">Office</dt><dd data-i18n="c_office_v">Algiers, Algeria</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap" data-i18n="footer">© 2026 VOIPDZ · Algiers, Algeria</div>
+</footer>
+
+<script>
+(function () {
+  var T = {
+    en: {
+      title: "VOIPDZ — SMS & Voice Termination, Algeria",
+      nav_services: "Services", nav_coverage: "Coverage", nav_start: "How to start", nav_contact: "Contact",
+      hero_eyebrow: "Wholesale telecom · Algiers, Algeria",
+      hero_title: "SMS and voice termination to Algeria",
+      hero_lead: "VOIPDZ connects aggregators, carriers and OTP providers to Mobilis, Djezzy and Ooredoo over SMPP, with real delivery reports and a free test before any live traffic. SMS to Tunisia is also available.",
+      hero_cta_test: "Request a free test", hero_cta_wa: "WhatsApp",
+      term_label: "SMPP session · example",
+      svc_title: "What we offer",
+      sms_title: "SMS termination (A2P / OTP)",
+      sms_desc: "One-time passwords and transactional messages to Algeria and Tunisia.",
+      sms_f1: "SMPP v3.4 connection", sms_f2: "Real DLRs, never fake delivery reports",
+      sms_f3: "Up to 100 SMS per second", sms_f4: "Free test on your own numbers",
+      voice_title: "Voice termination (VoIP)",
+      voice_desc: "Wholesale voice routes for carriers and VoIP providers.",
+      voice_f1: "SIP interconnection", voice_f2: "Carrier-grade softswitch (VOS3000)", voice_f3: "Destinations and rates on request",
+      cov_title: "SMS coverage", cov_country: "Country", cov_operator: "Operator",
+      cov_dz: "Algeria (+213)", cov_tn: "Tunisia (+216)", cov_tn_ops: "Operators on request",
+      cov_note: "Voice destinations and all rates are shared on request.",
+      steps_title: "How to start",
+      s1_t: "Send your traffic profile", s1_d: "Destinations, expected volume, sender IDs and message type (OTP or transactional).",
+      s2_t: "Get a test account", s2_d: "We open an SMPP test account, usually the same day.",
+      s3_t: "Test, then go live", s3_d: "Check delivery and DLRs on your own numbers, then switch to live traffic.",
+      contact_title: "Contact",
+      contact_lead: "Tell us your destinations and volume, and we’ll send you rates and a test account.",
+      c_btn_email: "Email us", c_btn_wa: "Chat on WhatsApp",
+      c_email: "Email", c_phone: "Phone & WhatsApp", c_office: "Office", c_office_v: "Algiers, Algeria",
+      footer: "© 2026 VOIPDZ · Algiers, Algeria"
+    },
+    fr: {
+      title: "VOIPDZ — Terminaison SMS et voix, Algérie",
+      nav_services: "Services", nav_coverage: "Couverture", nav_start: "Démarrer", nav_contact: "Contact",
+      hero_eyebrow: "Télécom wholesale · Alger, Algérie",
+      hero_title: "Terminaison SMS et voix vers l’Algérie",
+      hero_lead: "VOIPDZ connecte agrégateurs, opérateurs et fournisseurs d’OTP à Mobilis, Djezzy et Ooredoo via SMPP, avec de vrais accusés de réception et un test gratuit avant tout trafic réel. Les SMS vers la Tunisie sont aussi disponibles.",
+      hero_cta_test: "Demander un test gratuit", hero_cta_wa: "WhatsApp",
+      term_label: "Session SMPP · exemple",
+      svc_title: "Nos services",
+      sms_title: "Terminaison SMS (A2P / OTP)",
+      sms_desc: "Codes OTP et messages transactionnels vers l’Algérie et la Tunisie.",
+      sms_f1: "Connexion SMPP v3.4", sms_f2: "Vrais DLR, jamais de faux accusés de réception",
+      sms_f3: "Jusqu’à 100 SMS par seconde", sms_f4: "Test gratuit sur vos propres numéros",
+      voice_title: "Terminaison voix (VoIP)",
+      voice_desc: "Routes voix wholesale pour opérateurs et fournisseurs VoIP.",
+      voice_f1: "Interconnexion SIP", voice_f2: "Softswitch de niveau opérateur (VOS3000)", voice_f3: "Destinations et tarifs sur demande",
+      cov_title: "Couverture SMS", cov_country: "Pays", cov_operator: "Opérateur",
+      cov_dz: "Algérie (+213)", cov_tn: "Tunisie (+216)", cov_tn_ops: "Opérateurs sur demande",
+      cov_note: "Les destinations voix et tous les tarifs sont communiqués sur demande.",
+      steps_title: "Comment démarrer",
+      s1_t: "Envoyez votre profil de trafic", s1_d: "Destinations, volume prévu, sender ID et type de messages (OTP ou transactionnel).",
+      s2_t: "Recevez un compte de test", s2_d: "Nous ouvrons un compte SMPP de test, généralement le jour même.",
+      s3_t: "Testez, puis passez au trafic réel", s3_d: "Vérifiez la livraison et les DLR sur vos numéros, puis lancez le trafic réel.",
+      contact_title: "Contact",
+      contact_lead: "Indiquez-nous vos destinations et vos volumes : nous vous enverrons nos tarifs et un compte de test.",
+      c_btn_email: "Écrivez-nous", c_btn_wa: "Discuter sur WhatsApp",
+      c_email: "E-mail", c_phone: "Téléphone & WhatsApp", c_office: "Bureau", c_office_v: "Alger, Algérie",
+      footer: "© 2026 VOIPDZ · Alger, Algérie"
+    },
+    ar: {
+      title: "VOIPDZ — إنهاء الرسائل القصيرة والمكالمات، الجزائر",
+      nav_services: "الخدمات", nav_coverage: "التغطية", nav_start: "كيف تبدأ", nav_contact: "اتصل بنا",
+      hero_eyebrow: "اتصالات بالجملة · الجزائر العاصمة",
+      hero_title: "إنهاء الرسائل القصيرة والمكالمات الصوتية نحو الجزائر",
+      hero_lead: "تربط VOIPDZ المجمّعين والمشغلين ومزوّدي رموز التحقق (OTP) بشبكات موبيليس وجازي وأوريدو عبر بروتوكول SMPP، مع تقارير تسليم حقيقية واختبار مجاني قبل أي حركة فعلية. كما نوفر إرسال الرسائل نحو تونس.",
+      hero_cta_test: "اطلب اختبارًا مجانيًا", hero_cta_wa: "واتساب",
+      term_label: "جلسة SMPP · مثال",
+      svc_title: "خدماتنا",
+      sms_title: "إنهاء الرسائل القصيرة (⁦A2P / OTP⁩)",
+      sms_desc: "رموز التحقق والرسائل الخدمية نحو الجزائر وتونس.",
+      sms_f1: "ربط عبر SMPP v3.4", sms_f2: "تقارير تسليم حقيقية، دون أي تقارير مزيفة",
+      sms_f3: "حتى 100 رسالة في الثانية", sms_f4: "اختبار مجاني على أرقامك الخاصة",
+      voice_title: "إنهاء المكالمات الصوتية (⁦VoIP⁩)",
+      voice_desc: "مسارات صوتية بالجملة للمشغلين ومزوّدي خدمات VoIP.",
+      voice_f1: "ربط عبر بروتوكول SIP", voice_f2: "مقسم برمجي بمستوى المشغلين (VOS3000)", voice_f3: "الوجهات والأسعار عند الطلب",
+      cov_title: "تغطية الرسائل القصيرة", cov_country: "البلد", cov_operator: "المشغل",
+      cov_dz: "الجزائر (⁦+213⁩)", cov_tn: "تونس (⁦+216⁩)", cov_tn_ops: "المشغلون عند الطلب",
+      cov_note: "نرسل الوجهات الصوتية وجميع الأسعار عند الطلب.",
+      steps_title: "كيف تبدأ",
+      s1_t: "أرسل ملف حركتك", s1_d: "الوجهات، الحجم المتوقع، أسماء المرسل ونوع الرسائل (OTP أو خدمية).",
+      s2_t: "احصل على حساب تجريبي", s2_d: "نفتح لك حساب SMPP تجريبيًا، غالبًا في اليوم نفسه.",
+      s3_t: "اختبر ثم انطلق", s3_d: "تحقّق من التسليم وتقارير DLR على أرقامك، ثم انتقل إلى الحركة الفعلية.",
+      contact_title: "اتصل بنا",
+      contact_lead: "أخبرنا بالوجهات والحجم، وسنرسل لك الأسعار وحسابًا تجريبيًا.",
+      c_btn_email: "راسلنا", c_btn_wa: "تواصل عبر واتساب",
+      c_email: "البريد الإلكتروني", c_phone: "الهاتف وواتساب", c_office: "المقر", c_office_v: "الجزائر العاصمة، الجزائر",
+      footer: "© 2026 VOIPDZ · الجزائر العاصمة، الجزائر"
+    }
+  };
+
+  function apply(lang) {
+    if (!T[lang]) lang = "en";
+    var dict = T[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.title = dict.title;
+    var nodes = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < nodes.length; i++) {
+      var key = nodes[i].getAttribute("data-i18n");
+      if (dict[key] != null) nodes[i].textContent = dict[key];
+    }
+    var btns = document.querySelectorAll(".lang button");
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].setAttribute("aria-pressed", btns[j].getAttribute("data-lang") === lang ? "true" : "false");
+    }
+    try { localStorage.setItem("voipdz-lang", lang); } catch (e) {}
+  }
+
+  function initial() {
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q && T[q]) return q;
+    } catch (e) {}
+    try {
+      var saved = localStorage.getItem("voipdz-lang");
+      if (saved && T[saved]) return saved;
+    } catch (e) {}
+    var nav = (navigator.language || "en").slice(0, 2).toLowerCase();
+    return T[nav] ? nav : "en";
+  }
+
+  document.querySelector(".lang").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-lang]");
+    if (b) apply(b.getAttribute("data-lang"));
+  });
+
+  apply(initial());
+})();
+</script>
+</body>
+</html>
